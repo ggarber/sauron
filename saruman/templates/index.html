@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+		<script src="{{ url_for('static', filename='jquery.cookie.js') }}"></script>
+		<script src="{{ url_for('static', filename='jquery.jsPlumb-1.5.5-min.js') }}"></script>
+		<script src="{{ url_for('static', filename='demo.js') }}"></script>
+		<link rel="stylesheet" href="{{ url_for('static', filename='demo.css') }}">
+		<meta http-equiv="refresh" content="5" >
+	</head>
+    <body data-demo-id="sourcesAndTargets" data-library="jquery">
+
+    	<div class="demo source-target-demo" id="source-target-demo">
+            {% for _, server in servers.iteritems() %}
+            	<div class="window smallWindow {% if server['ok'] %}ok{% else %}error{% endif %}" id="{{ server['name'] }}"><strong>{{ server['name'] }}</strong><br/><br/></div>
+            {% endfor %}
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+{
+	"plugins": {
+		"ps"     : { },
+		"netstat": { "localConnections": true },
+		"store"  : { }
+	},
+	"servers": {
+		"server1": { "host": "hostname", "username": "username", "key": "key_path", "role": "role1", "addresses": [] }
+	},
+	"roles": {
+		"role1": { "processes": [ "process1", "process2" ]}
+	},
+	"processes": {
+		"process1": { "regex": "regex1" },
+		"process2": { "regex": "regex2" }
+	}
+}
